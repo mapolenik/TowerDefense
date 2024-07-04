@@ -1,4 +1,4 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;  // (World,ed Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
  * The best game.
@@ -16,5 +16,10 @@ public class Enemy extends Actor
     {
         // Add your action code here.
         this.move(2);
+        
+        if (this.isAtEdge())
+        {
+            this.turn(180);
+        }
     }
 }
