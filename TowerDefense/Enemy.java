@@ -14,12 +14,29 @@ public class Enemy extends Actor
      */
     public void act()
     {
-        // Add your action code here.
-        this.move(2);
-        
+        this.move(1);
+
         if (this.isAtEdge())
         {
             this.turn(180);
         }
+        
+        if (this.isTouching(Direction.class))
+        Direction direction = (Direction)this.getOneIntersectingObject(Direction.class);
+        
+        if (direction != null)
+
+        {
+            this.turn(90);
+            int rotation = direction.getRotation();
+            this.setRotation(rotation);
+
+        }
+        
+        if (this.isTouching(Orb.class))
+        {
+            this.turn(-90);
+        }
+
     }
 }
